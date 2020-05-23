@@ -2,7 +2,7 @@
 
 Neste tutorial será mostrado como centralizar os logs do Kubernetes com Graylog + Fluentd.
 
-Existem outras maneiras talvez mais elegante, mas optamos em enviar os logs (stdout/stderr) dos pods para o Graylog utilizando o [fluentd-kubernetes-daemonset](https://github.com/fluent/fluentd-kubernetes-daemonset). 
+Existem outras maneiras talvez mais elegantes, mas optamos em enviar os logs (stdout/stderr) dos pods para o Graylog utilizando o [fluentd-kubernetes-daemonset](https://github.com/fluent/fluentd-kubernetes-daemonset). 
 O fluentd(daemonset) irá utilizar as configurações passadas pelo configmap.
 
 
@@ -16,13 +16,19 @@ O fluentd(daemonset) irá utilizar as configurações passadas pelo configmap.
 - Graylog >= 3.1 
 - fluentd >= 1.10 
 
+
+### Pré-Requisitos 
+- Cluster kubernetes 
+- Servidor Graylog 
+
+
 ## Use sua configuração
 
 Disponibilizamos dois manifestos de configmap.
 
-> fluent-configmap.yaml --> Responsável pelo arquivo de configurado do fluent.conf
+> fluent-configmap.yaml --> Responsável pelo arquivo de configuração do fluent.conf
 
-> fluent-kubernetes-configmap.yaml --> Responsável pelo arquivo de configurado do kubernetes.conf
+> fluent-kubernetes-configmap.yaml --> Responsável pelo arquivo de configuração do kubernetes.conf
 
 
 Exemplo de como criar um configmap usando como base um arquivo.
