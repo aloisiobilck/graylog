@@ -1,0 +1,127 @@
+{
+  "v": 1,
+  "id": "8338cc27-ff35-4bf2-b5b2-fea7b1be8b9e",
+  "rev": 1,
+  "name": "gelf_input",
+  "summary": "gelf_input",
+  "description": "",
+  "vendor": "gelf_input",
+  "url": "",
+  "parameters": [],
+  "entities": [
+    {
+      "v": "1",
+      "type": {
+        "name": "input",
+        "version": "1"
+      },
+      "id": "c4760faf-0c7f-4e91-a108-fa6436c14957",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "GELF_UDP_12201"
+        },
+        "configuration": {
+          "recv_buffer_size": {
+            "@type": "integer",
+            "@value": 262144
+          },
+          "port": {
+            "@type": "integer",
+            "@value": 12201
+          },
+          "number_worker_threads": {
+            "@type": "integer",
+            "@value": 4
+          },
+          "bind_address": {
+            "@type": "string",
+            "@value": "0.0.0.0"
+          },
+          "decompress_size_limit": {
+            "@type": "integer",
+            "@value": 8388608
+          }
+        },
+        "static_fields": {},
+        "type": {
+          "@type": "string",
+          "@value": "org.graylog2.inputs.gelf.udp.GELFUDPInput"
+        },
+        "global": {
+          "@type": "boolean",
+          "@value": true
+        },
+        "extractors": [
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": ""
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [],
+            "configuration": {
+              "list_separator": {
+                "@type": "string",
+                "@value": ", "
+              },
+              "kv_separator": {
+                "@type": "string",
+                "@value": "="
+              },
+              "key_prefix": {
+                "@type": "string",
+                "@value": ""
+              },
+              "key_separator": {
+                "@type": "string",
+                "@value": "_"
+              },
+              "replace_key_whitespace": {
+                "@type": "boolean",
+                "@value": false
+              },
+              "key_whitespace_replacement": {
+                "@type": "string",
+                "@value": "_"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "kubernetes"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "json"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "JSON"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "NONE"
+            }
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.2.4+a407287"
+        }
+      ]
+    }
+  ]
+}
